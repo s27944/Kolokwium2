@@ -143,8 +143,6 @@ public class DatabaseService : IDatabaseService
                     i++;
                 }
                 
-                
-
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
                 

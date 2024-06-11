@@ -36,12 +36,13 @@ public class ApiController : ControllerBase
     {
         try
         {
-            _databaseService.Post(id, request);
+            var response = await _databaseService.Post(id, request);
+            return Created(response);
         }
         catch (Exception e)
         {
             return NotFound(e.Message);
         }
-        return Created();
+        
     }
 }
